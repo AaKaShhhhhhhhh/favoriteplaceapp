@@ -1,12 +1,12 @@
-import 'package:favoriteplaceapp/dummylistt.dart';
+import 'package:favoriteplaceapp/NewScreen.dart';
+
 import 'package:favoriteplaceapp/favoritplacedetails.dart';
 import 'package:favoriteplaceapp/firstscreen.dart';
-import 'package:favoriteplaceapp/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class Uiscreen extends StatefulWidget{
-  Uiscreen({super.key});
+  const Uiscreen({super.key});
 
 
   @override
@@ -25,6 +25,12 @@ class Uiscreen extends StatefulWidget{
     });
       }
 
+      void newsaveplace(index){
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context)=> Newscreen(Placename: Deataiill[index].name)));
+      }
+
       @override
   Widget build(BuildContext context) {
  
@@ -38,10 +44,14 @@ class Uiscreen extends StatefulWidget{
 
         if(Deataiill.isNotEmpty){content = ListView.builder(
           itemCount: Deataiill.length,
-          itemBuilder: (context, index) => ListTile(
+          itemBuilder: (context, index) =>InkWell(child:  Card(child:   ListTile(
+            
             title: Text(Deataiill[index].name, 
           ),
-          leading: Container(width: 20, height: 20,),
+          leading: SizedBox(width: 20, height: 20,),
+          )
+          ),
+          onTap: (){newsaveplace(index);} ,
           )
           );
           }

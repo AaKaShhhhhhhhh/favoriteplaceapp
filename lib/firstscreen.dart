@@ -2,7 +2,7 @@ import 'package:favoriteplaceapp/favoritplacedetails.dart';
 import 'package:flutter/material.dart';
 
 class firstscreen extends StatefulWidget{
-  firstscreen({super.key});
+  const firstscreen({super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -29,7 +29,7 @@ final formKey = GlobalKey<FormState>();
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(title: Text("ADD PLACES"),),
+      appBar: AppBar(title: const Text("ADD PLACES"),),
 
       body:Form(key: formKey, child: 
        Column(
@@ -50,7 +50,7 @@ final formKey = GlobalKey<FormState>();
 
           ),
           const SizedBox(height: 20,),
-          ElevatedButton(onPressed: saveplace, child: Text("ADD PLACE")),
+          ElevatedButton(onPressed: saveplace, child: const Text("ADD PLACE")),
         ],
         
       ),
