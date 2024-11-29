@@ -1,17 +1,19 @@
 import 'package:favoriteplaceapp/favoritplacedetails.dart';
+import 'package:favoriteplaceapp/main.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class firstscreen extends StatefulWidget{
+class firstscreen extends ConsumerStatefulWidget{
   const firstscreen({super.key});
 
   @override
-  State<StatefulWidget> createState() {
+  ConsumerState<firstscreen> createState() {
     return _firstscreenState();
   }
 }
 
 
-class _firstscreenState extends State<firstscreen> {
+class _firstscreenState extends ConsumerState<firstscreen> {
 final formKey = GlobalKey<FormState>();
   var entername = "";
 
@@ -29,15 +31,22 @@ final formKey = GlobalKey<FormState>();
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 39, 47, 81),
       appBar: AppBar(title: const Text("ADD PLACES"),),
 
       body:Form(key: formKey, child: 
        Column(
         children: [
+
+          SizedBox(height: 20,),
           TextFormField(
+            style: TextStyle(color: Color.fromARGB(251, 247, 226, 208)),
             decoration: const InputDecoration(
+              
+              
               labelText: "Enter Place Name",
               border: OutlineInputBorder(),
+              
             ),
             validator: (value) {
                   if (value == null || value.isEmpty || value.trim().length <= 1 || value.trim().length > 50) {

@@ -1,6 +1,7 @@
 import 'package:favoriteplaceapp/UIscreen.dart';
 import 'package:flutter/material.dart';
-
+import 'package:riverpod/riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final colorScheme = ColorScheme.fromSeed(
@@ -27,7 +28,7 @@ final theme = ThemeData().copyWith(
 
 void main() {
   runApp(
-      const MyApp(),
+    const ProviderScope( child: MyApp())  ,
   );
 }
 
