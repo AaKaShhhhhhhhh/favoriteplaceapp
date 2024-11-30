@@ -72,7 +72,7 @@ class Uiscreen extends ConsumerStatefulWidget{
             ],
             
           ),
-          body: Newscreen(Placename: userplace ),
+          body:content,
          );
     }
    

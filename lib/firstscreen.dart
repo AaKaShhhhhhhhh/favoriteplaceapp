@@ -1,4 +1,5 @@
 import 'package:favoriteplaceapp/favoritplacedetails.dart';
+import 'package:favoriteplaceapp/image_input.dart';
 import 'package:favoriteplaceapp/main.dart';
 import 'package:favoriteplaceapp/riverpod.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +59,11 @@ final formKey = GlobalKey<FormState>();
                 },
             onSaved: (value){entername = value!;} ,
 
+            
+
           ),
+          const SizedBox(height: 20,),
+          ImageInput(),
           const SizedBox(height: 20,),
           ElevatedButton(onPressed: saveplace, child: const Text("ADD PLACE")),
         ],
