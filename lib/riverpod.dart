@@ -1,7 +1,6 @@
 
 
 import 'package:favoriteplaceapp/favoritplacedetails.dart';
-import 'package:flutter/material.dart';
 import 'package:riverpod/riverpod.dart';
 
 class UserPlaceNotfier extends  StateNotifier<List<details>>{
@@ -15,7 +14,7 @@ class UserPlaceNotfier extends  StateNotifier<List<details>>{
   }
 }
 
-final userplacenotif = StateNotifierProvider(
+final userplacenotif = StateNotifierProvider<UserPlaceNotfier , List<details>>(
   (ref) => UserPlaceNotfier()
 );
 

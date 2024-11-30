@@ -2,21 +2,24 @@ import 'package:favoriteplaceapp/NewScreen.dart';
 
 import 'package:favoriteplaceapp/favoritplacedetails.dart';
 import 'package:favoriteplaceapp/firstscreen.dart';
+import 'package:favoriteplaceapp/riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class Uiscreen extends StatefulWidget{
+
+class Uiscreen extends ConsumerStatefulWidget{
   const Uiscreen({super.key});
 
 
   @override
-  State<StatefulWidget> createState() => _UiscreenState();}
-    class _UiscreenState extends State<Uiscreen> {
-      List<details> Deataiill=[];
+  ConsumerState<ConsumerStatefulWidget> createState() => _UiscreenState();}
+    class _UiscreenState extends ConsumerState<Uiscreen> {
+     final List<details> Deataiill=[];
   
   var loading=true;
       void addplaces(context) async{
-       final newItem= await Navigator.of(context).push<details>( MaterialPageRoute(builder: (context) => firstscreen()));
+       final newItem= await Navigator.of(context).push<details>( MaterialPageRoute(builder: (context) => const firstscreen()));
         if(newItem==null){
       return;
     }
@@ -32,7 +35,9 @@ class Uiscreen extends StatefulWidget{
       }
 
       @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context ) {
+    final ref = this.ref;
+    final userplace = ref.watch(userplacenotif);
  
     Widget content = const Center(
       child: Text(" NO DATA YET ! ", 
@@ -48,7 +53,7 @@ class Uiscreen extends StatefulWidget{
             
             title: Text(Deataiill[index].name, 
           ),
-          leading: SizedBox(width: 20, height: 20,),
+          leading: const SizedBox(width: 20, height: 20,),
           )
           ),
           onTap: (){newsaveplace(index);} ,
@@ -67,7 +72,7 @@ class Uiscreen extends StatefulWidget{
             ],
             
           ),
-          body: content,
+          body: Newscreen(Placename: userplace ),
          );
     }
    

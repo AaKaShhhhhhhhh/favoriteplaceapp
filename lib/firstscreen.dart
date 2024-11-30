@@ -1,5 +1,6 @@
 import 'package:favoriteplaceapp/favoritplacedetails.dart';
 import 'package:favoriteplaceapp/main.dart';
+import 'package:favoriteplaceapp/riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -24,23 +25,23 @@ final formKey = GlobalKey<FormState>();
         formKey.currentState!.save();
         print(entername);
     }
-    
+    ref.read(userplacenotif.notifier).addplacee(entername);
     Navigator.of(context).pop(details(name: entername));
   }
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 39, 47, 81),
+      backgroundColor: const Color.fromARGB(255, 39, 47, 81),
       appBar: AppBar(title: const Text("ADD PLACES"),),
 
       body:Form(key: formKey, child: 
        Column(
         children: [
 
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           TextFormField(
-            style: TextStyle(color: Color.fromARGB(251, 247, 226, 208)),
+            style: const TextStyle(color: Color.fromARGB(251, 247, 226, 208)),
             decoration: const InputDecoration(
               
               

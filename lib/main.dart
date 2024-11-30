@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       title: 'Great Places',
       theme: theme,
       
-      home: Uiscreen(),
+      home: const Uiscreen(),
     );
   }
 }

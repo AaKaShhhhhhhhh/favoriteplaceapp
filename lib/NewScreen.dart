@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Newscreen extends StatefulWidget{
-  Newscreen({super.key , required this.Placename});
+  const Newscreen({super.key , required this.Placename});
 
   final String Placename;
 
