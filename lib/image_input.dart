@@ -9,6 +9,9 @@ class ImageInput extends StatefulWidget{
     
   }
 }
+void _clickpic(){
+
+}
 class _ImageInputState extends State<ImageInput> {
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,7 @@ class _ImageInputState extends State<ImageInput> {
     width: double.infinity,
     alignment: Alignment.center,
     child: TextButton.icon(
-      onPressed: (){}, 
+      onPressed: _clickpic, 
       icon: Icon(Icons.camera), 
       label: Text("Click Picture"),
       ),
