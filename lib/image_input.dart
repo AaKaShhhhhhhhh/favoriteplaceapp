@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ImageInput extends StatefulWidget{
-  ImageInput({super.key});
+  const ImageInput({super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -21,8 +21,8 @@ class _ImageInputState extends State<ImageInput> {
     alignment: Alignment.center,
     child: TextButton.icon(
       onPressed: _clickpic, 
-      icon: Icon(Icons.camera), 
-      label: Text("Click Picture"),
+      icon: const Icon(Icons.camera), 
+      label: const Text("Click Picture"),
       ),
    );
   }

@@ -4,7 +4,6 @@ import 'package:favoriteplaceapp/favoritplacedetails.dart';
 import 'package:favoriteplaceapp/firstscreen.dart';
 import 'package:favoriteplaceapp/riverpod.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 
@@ -42,7 +41,7 @@ class Uiscreen extends ConsumerStatefulWidget{
     Widget content = const Center(
       child: Text(" NO DATA YET ! ", 
       style: TextStyle(
-        fontSize: 20, color: Color.fromARGB(255, 202, 202, 224)
+        fontSize: 21, color: Color.fromARGB(255, 202, 202, 224)
         ),
         )
         );
