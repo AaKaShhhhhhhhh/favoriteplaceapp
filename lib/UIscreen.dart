@@ -52,7 +52,7 @@ class Uiscreen extends ConsumerStatefulWidget{
             
             title: Text(Deataiill[index].name, 
           ),
-          leading: const SizedBox(width: 20, height: 20,),
+          leading: const SizedBox(width: 21, height: 20,),
           )
           ),
           onTap: (){newsaveplace(index);} ,
