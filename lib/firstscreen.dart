@@ -62,7 +62,7 @@ final formKey = GlobalKey<FormState>();
 
           ),
           const SizedBox(height: 20,),
-          ImageInput(),
+          const ImageInput(),
           const SizedBox(width: 20,),
           ElevatedButton(onPressed: saveplace, child: const Text("ADD PLACE")),
         ],
