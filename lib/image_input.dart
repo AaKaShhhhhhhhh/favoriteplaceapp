@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -43,11 +42,19 @@ class _ImageInputState extends State<ImageInput> {
       );
 
       if (_selectedimg != null){
-        content = Image.file(_selectedimg!  , fit: BoxFit.cover,);
+        content = GestureDetector( 
+          onTap: _clickpic,
+          child: Image.file(_selectedimg!  , fit: BoxFit.cover, width: double.infinity,height: double.infinity,));
       }
 
 
    return Container(
+    decoration: BoxDecoration(
+      border: Border.all(
+        color: Colors.blue,
+        width: 1.0,
+      )
+    ),
     height: 250,
     width: double.infinity,
     alignment: Alignment.center,

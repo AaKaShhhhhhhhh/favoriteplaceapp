@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:favoriteplaceapp/favoritplacedetails.dart';
 import 'package:favoriteplaceapp/image_input.dart';
 import 'package:favoriteplaceapp/riverpod.dart';
@@ -26,7 +28,7 @@ final formKey = GlobalKey<FormState>();
         print(entername);
     }
     ref.read(userplacenotif.notifier).addplacee(entername);
-    Navigator.of(context).pop(details(name: entername));
+    Navigator.of(context).pop(details(name: entername , image: ));
   }
   @override
   Widget build(BuildContext context) {
