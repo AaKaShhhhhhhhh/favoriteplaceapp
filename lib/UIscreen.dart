@@ -47,12 +47,16 @@ class Uiscreen extends ConsumerStatefulWidget{
         );
 
         if(Deataiill.isNotEmpty){content = ListView.builder(
+          
           itemCount: Deataiill.length,
           itemBuilder: (context, index) =>InkWell(child:  Card(child:   ListTile(
+            leading: CircleAvatar(
+              backgroundImage: FileImage(Deataiill[index].image!),
+            ),
             
             title: Text(Deataiill[index].name, 
           ),
-          leading: const SizedBox(width: 20, height: 20,),
+          
           )
           ),
           onTap: (){newsaveplace(index);} ,

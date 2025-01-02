@@ -1,10 +1,9 @@
-import 'dart:io';
-
 import 'package:favoriteplaceapp/favoritplacedetails.dart';
 import 'package:favoriteplaceapp/image_input.dart';
 import 'package:favoriteplaceapp/riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'dart:io';
 
 class firstscreen extends ConsumerStatefulWidget{
   const firstscreen({super.key});
@@ -19,7 +18,7 @@ class firstscreen extends ConsumerStatefulWidget{
 class _firstscreenState extends ConsumerState<firstscreen> {
 final formKey = GlobalKey<FormState>();
   var entername = "";
-
+File? _selectedimg;
 
   void saveplace(){
     if(formKey.currentState!.validate())
@@ -28,7 +27,7 @@ final formKey = GlobalKey<FormState>();
         print(entername);
     }
     ref.read(userplacenotif.notifier).addplacee(entername);
-    Navigator.of(context).pop(details(name: entername , image: ));
+    Navigator.of(context).pop(details(name: entername , image: _selectedimg));
   }
   @override
   Widget build(BuildContext context) {
@@ -64,7 +63,10 @@ final formKey = GlobalKey<FormState>();
 
           ),
           const SizedBox(height: 20,),
-          const ImageInput(),
+           ImageInput(
+            onselectimage:(image) {
+            _selectedimg = image;
+          }),
           const SizedBox(width: 20,),
           ElevatedButton(onPressed: saveplace, child: const Text("ADD PLACE")),
         ],
