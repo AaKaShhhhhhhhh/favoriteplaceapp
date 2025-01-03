@@ -6,5 +6,5 @@ class details{
 
 
 final String name;
-final File ? image;
+final File? image;
 }

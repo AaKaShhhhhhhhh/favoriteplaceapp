@@ -26,7 +26,7 @@ File? _selectedimg;
         formKey.currentState!.save();
         print(entername);
     }
-    ref.read(userplacenotif.notifier).addplacee(entername);
+    ref.read(userplacenotif.notifier).addplacee(entername , _selectedimg);
     Navigator.of(context).pop(details(name: entername , image: _selectedimg));
   }
   @override

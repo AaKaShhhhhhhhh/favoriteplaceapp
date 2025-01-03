@@ -30,7 +30,7 @@ class Uiscreen extends ConsumerStatefulWidget{
       void newsaveplace(index){
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context)=> Newscreen(Placename: Deataiill[index].name)));
+            builder: (context)=> Newscreen(detailss: Deataiill[index])));
       }
 
       @override

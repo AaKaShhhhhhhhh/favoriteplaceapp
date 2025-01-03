@@ -7,8 +7,8 @@ class UserPlaceNotfier extends  StateNotifier<List<details>>{
 
   UserPlaceNotfier() : super(const[]);
 
-  void addplacee(String title){
-    final newPLace = details(name: title);
+  void addplacee(String title ,image){
+    final newPLace = details(name: title , image: image);
     state = [newPLace, ...state];
 
   }
