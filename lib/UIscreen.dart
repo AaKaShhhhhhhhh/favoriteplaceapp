@@ -41,7 +41,7 @@ class Uiscreen extends ConsumerStatefulWidget{
     Widget content = const Center(
       child: Text(" NO DATA YET ! ", 
       style: TextStyle(
-        fontSize: 22, color: Color.fromARGB(255, 202, 202, 224)
+        fontSize: 21, color: Color.fromARGB(255, 202, 202, 224)
         ),
         )
         );
