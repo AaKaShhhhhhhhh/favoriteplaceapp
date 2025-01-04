@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:favoriteplaceapp/location_in.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -43,6 +44,9 @@ class _ImageInputState extends State<ImageInput> {
       icon: const Icon(Icons.camera), 
       label: const Text("Click Picture"),
       );
+      const SizedBox(height: 20,);
+       
+      
 
       if (_selectedimg != null){
         content = GestureDetector( 

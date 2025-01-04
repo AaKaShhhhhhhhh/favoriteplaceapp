@@ -1,5 +1,6 @@
 import 'package:favoriteplaceapp/favoritplacedetails.dart';
 import 'package:favoriteplaceapp/image_input.dart';
+import 'package:favoriteplaceapp/location_in.dart';
 import 'package:favoriteplaceapp/riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -67,7 +68,9 @@ File? _selectedimg;
             onselectimage:(image) {
             _selectedimg = image;
           }),
-          const SizedBox(width: 20,),
+          const SizedBox(width: 20,height: 10,),
+          locationIn(),
+          const SizedBox(width: 20,height: 20,),
           ElevatedButton(onPressed: saveplace, child: const Text("ADD PLACE")),
         ],
         
