@@ -39,6 +39,8 @@ if (permissionGranted == PermissionStatus.denied) {
 }
 
 locationData = await location.getLocation();
+print(locationData.latitude);
+print(locationData.longitude);
   }
 
 
@@ -49,7 +51,7 @@ locationData = await location.getLocation();
       children: [
         Container(
           alignment: Alignment.center,
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           width: double.infinity,
           height: 170,
           decoration: BoxDecoration(
@@ -58,16 +60,25 @@ locationData = await location.getLocation();
         width: 1.0,
       )
     ),
-        child: Text("NO LOCATION YET !" , textAlign: TextAlign.center, style: TextStyle(
+        child: const Text("NO LOCATION YET !" , textAlign: TextAlign.center, style: TextStyle(
         fontSize: 19, color: Color.fromARGB(255, 202, 202, 224)
         ),),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            TextButton.icon(onPressed: (){}, label: Text("GET CURRENT LOCATION"),icon: Icon(Icons.location_on),),
+            TextButton.icon(onPressed: (){
+              getlocation();
+            }, 
+            label: const Text("GET CURRENT LOCATION"),
+            icon: const Icon(Icons.location_on),),
+
             const SizedBox(width: 20,),
-            TextButton.icon(onPressed: (){}, label: Text("SELECT LOCATION"),icon: Icon(Icons.map),),
+
+            TextButton.icon(onPressed: (){}, 
+            label: const Text("SELECT LOCATION"),
+            icon: const Icon(Icons.map),
+            ),
           ],
         )
       ]

@@ -69,7 +69,7 @@ File? _selectedimg;
             _selectedimg = image;
           }),
           const SizedBox(width: 20,height: 10,),
-          locationIn(),
+          const locationIn(),
           const SizedBox(width: 20,height: 20,),
           ElevatedButton(onPressed: saveplace, child: const Text("ADD PLACE")),
         ],
