@@ -61,7 +61,7 @@ print(locationData.longitude);
       )
     ),
         child: const Text("NO LOCATION YET !" , textAlign: TextAlign.center, style: TextStyle(
-        fontSize: 18, color: Color.fromARGB(255, 202, 202, 224)
+        fontSize: 19, color: Color.fromARGB(255, 202, 202, 224)
         ),),
         ),
         Row(
