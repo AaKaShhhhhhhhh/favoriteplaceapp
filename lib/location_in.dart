@@ -50,10 +50,11 @@ print(locationData.longitude);
     return Column(
       children: [
         Container(
+          
           alignment: Alignment.center,
           margin: const EdgeInsets.all(10),
           width: double.infinity,
-          height: 170,
+          height: 171,
           decoration: BoxDecoration(
       border: Border.all(
         color: Colors.blue,
