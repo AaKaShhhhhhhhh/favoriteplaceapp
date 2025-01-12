@@ -3,6 +3,7 @@ import 'package:favoriteplaceapp/NewScreen.dart';
 import 'package:favoriteplaceapp/favoritplacedetails.dart';
 import 'package:favoriteplaceapp/firstscreen.dart';
 import 'package:favoriteplaceapp/riverpod.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -33,17 +34,30 @@ class Uiscreen extends ConsumerStatefulWidget{
             builder: (context)=> Newscreen(detailss: Deataiill[index])));
       }
 
+      signout() async {
+        FirebaseAuth.instance.signOut();
+      }
+
       @override
   Widget build(BuildContext context ) {
     final ref = this.ref;
     final userplace = ref.watch(userplacenotif);
  
     Widget content = const Center(
-      child: Text(" NO DATA YET ! ", 
-      style: TextStyle(
-        fontSize: 21, color: Color.fromARGB(255, 202, 202, 224)
-        ),
-        )
+      child: Column(
+        children: [
+          Text(" NO DATA YET ! ", 
+          style: TextStyle(
+            fontSize: 21, color: Color.fromARGB(255, 202, 202, 224)
+            ),
+            ),
+
+            
+        ],
+        
+      ),
+      
+        
         );
 
         if(Deataiill.isNotEmpty){content = ListView.builder(
@@ -62,6 +76,7 @@ class Uiscreen extends ConsumerStatefulWidget{
           onTap: (){newsaveplace(index);} ,
           )
           );
+          
           }
         
 
@@ -72,6 +87,7 @@ class Uiscreen extends ConsumerStatefulWidget{
             backgroundColor: Colors.blueAccent,
             actions: [
               IconButton(icon: const Icon(Icons.add), onPressed: (){addplaces(context);}),
+              FloatingActionButton(onPressed: signout , )
             ],
             
           ),

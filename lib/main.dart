@@ -1,4 +1,5 @@
 import 'package:favoriteplaceapp/UIscreen.dart';
+import 'package:favoriteplaceapp/wrrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
       title: 'Great Places',
       theme: theme,
       
-      home: const Uiscreen(),
+      home: const Wrrapper(),
     );
   }
 }
