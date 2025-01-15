@@ -1,4 +1,3 @@
-import 'package:favoriteplaceapp/UIscreen.dart';
 import 'package:favoriteplaceapp/wrrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +31,7 @@ void main() async {
   await Firebase.initializeApp();
   runApp(
     const ProviderScope( child: MyApp())  ,
-  );
+  );          
 }
 
 class MyApp extends StatelessWidget {

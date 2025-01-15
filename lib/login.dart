@@ -19,20 +19,20 @@ signin()async{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login Page'),
+        title: const Text('Login Page'),
       ),
-      body: Padding(padding: EdgeInsets.all(20),
+      body: Padding(padding: const EdgeInsets.all(20),
       child: Column(
         children: [
           TextField(
             controller: email,
-            decoration: InputDecoration(hintText: "Enter Email"),
+            decoration: const InputDecoration(hintText: "Enter Email"),
           ),
           TextField(
             controller: password,
-            decoration: InputDecoration(hintText: "Enter Password"),
+            decoration: const InputDecoration(hintText: "Enter Password"),
           ),
-          ElevatedButton(onPressed: signin, child: Text("LOG IN"))
+          ElevatedButton(onPressed: signin, child: const Text("LOG IN"))
         ],
       ),
       

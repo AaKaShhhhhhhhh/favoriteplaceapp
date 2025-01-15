@@ -20,10 +20,10 @@ class _WrrapperState extends State<Wrrapper> {
       body: StreamBuilder(stream: FirebaseAuth.instance.authStateChanges(),
        builder: (context,snapshot){
         if(snapshot.hasData){
-          return Uiscreen();
+          return const Uiscreen();
         }
         else{
-          return Login();
+          return const Login();
         }
        }
       ),

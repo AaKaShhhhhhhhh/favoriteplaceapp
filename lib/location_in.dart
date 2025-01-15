@@ -1,6 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:location/location.dart';
+import 'dart:convert';
 
+import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'package:location/location.dart';
+import 'package:http/http.dart' as http;
 class locationIn extends StatefulWidget{
   const locationIn({super.key});
 
@@ -13,6 +16,8 @@ class locationIn extends StatefulWidget{
 }
 
 class _locationInState extends State<locationIn>{
+  Location? _pickedLocation;
+  var isgettingloc = false;
 
   void getlocation()async{
 
@@ -37,8 +42,22 @@ if (permissionGranted == PermissionStatus.denied) {
     return;
   }
 }
+setState((){
+isgettingloc = false;
+});
 
 locationData = await location.getLocation();
+final lng = locationData.longitude;
+final lat = locationData.latitude;
+final url = Uri.parse('https://maps.gomaps.pro/maps/api/geocode/json?latlng=$lat,$lng&key=AlzaSyJtC1PctK1FPEbgkl3VTFuDfsPa-XdL_Ba');
+final response = await http.get(url);
+final resData = json.decode(response.body);
+final address = resData['results'][0]['formatted_address'];
+
+setState((){
+isgettingloc = true;
+});
+
 print(locationData.latitude);
 print(locationData.longitude);
   }
