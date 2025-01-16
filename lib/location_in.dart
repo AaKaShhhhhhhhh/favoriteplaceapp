@@ -1,7 +1,7 @@
 import 'dart:convert';
 
+import 'package:favoriteplaceapp/favoritplacedetails.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:location/location.dart';
 import 'package:http/http.dart' as http;
 class locationIn extends StatefulWidget{
@@ -16,7 +16,7 @@ class locationIn extends StatefulWidget{
 }
 
 class _locationInState extends State<locationIn>{
-  Location? _pickedLocation;
+  placelocation? _pickedLocation;
   var isgettingloc = false;
 
   void getlocation()async{
@@ -43,7 +43,8 @@ if (permissionGranted == PermissionStatus.denied) {
   }
 }
 setState((){
-isgettingloc = false;
+
+isgettingloc = true;
 });
 
 locationData = await location.getLocation();
@@ -53,9 +54,13 @@ final url = Uri.parse('https://maps.gomaps.pro/maps/api/geocode/json?latlng=$lat
 final response = await http.get(url);
 final resData = json.decode(response.body);
 final address = resData['results'][0]['formatted_address'];
+if(lat == null || lng == null){
+  return;
+}
 
 setState((){
-isgettingloc = true;
+isgettingloc = false;
+_pickedLocation = placelocation(address: address, latitude: lat, longitude: lng);
 });
 
 print(locationData.latitude);
@@ -81,7 +86,7 @@ print(locationData.longitude);
       )
     ),
         child: const Text("NO LOCATION YET !" , textAlign: TextAlign.center, style: TextStyle(
-        fontSize: 18, color: Color.fromARGB(255, 202, 202, 224)
+        fontSize: 19, color: Color.fromARGB(255, 202, 202, 224)
         ),),
         ),
         Row(

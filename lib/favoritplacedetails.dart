@@ -12,9 +12,10 @@ class placelocation{
 }
 class details{
   details({
-  required this.name , required this.image});
+  required this.name , required this.image , required this.location});
 
 
 final String name;
 final File? image;
+final placelocation location;
 }
