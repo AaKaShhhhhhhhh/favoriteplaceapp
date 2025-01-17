@@ -19,6 +19,12 @@ class _locationInState extends State<locationIn>{
   placelocation? _pickedLocation;
   var isgettingloc = false;
 
+  String get locationImage{
+  final lat = _pickedLocation!.latitude;
+  final long = _pickedLocation!.longitude;
+    return "https://maps.googleapis.com/maps/api/staticmap?center$lat,$long=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794=AlzaSyJtC1PctK1FPEbgkl3VTFuDfsPa-XdL_Ba&signature=YOUR_SIGNATURE";
+  }
+
   void getlocation()async{
 
     Location location = Location();
@@ -78,7 +84,7 @@ print(locationData.longitude);
           alignment: Alignment.center,
           margin: const EdgeInsets.all(10),
           width: double.infinity,
-          height: 170,
+          height: 171,
           decoration: BoxDecoration(
       border: Border.all(
         color: Colors.blue,
