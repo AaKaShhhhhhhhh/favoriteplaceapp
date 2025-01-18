@@ -84,7 +84,7 @@ print(locationData.longitude);
           alignment: Alignment.center,
           margin: const EdgeInsets.all(10),
           width: double.infinity,
-          height: 171,
+          height: 170,
           decoration: BoxDecoration(
       border: Border.all(
         color: Colors.blue,
