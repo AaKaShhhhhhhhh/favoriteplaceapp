@@ -22,7 +22,7 @@ class _locationInState extends State<locationIn>{
   String get locationImage{
   final lat = _pickedLocation!.latitude;
   final long = _pickedLocation!.longitude;
-    return "https://maps.googleapis.com/maps/api/staticmap?center$lat,$long=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794=AlzaSyJtC1PctK1FPEbgkl3VTFuDfsPa-XdL_Ba&signature=YOUR_SIGNATURE";
+    return "https://maps.googleapis.com/maps/api/staticmap?center$lat,$long=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C$lat,$long=AlzaSyJtC1PctK1FPEbgkl3VTFuDfsPa-XdL_Ba";
   }
 
   void getlocation()async{
@@ -77,6 +77,18 @@ print(locationData.longitude);
 
   @override
   Widget build(BuildContext context) {
+    Widget previewcontent = Text(
+      "NO LOCATION FOUND",
+      style: TextStyle(fontSize: 20, color: Colors.red),
+
+
+    );
+    if(_pickedLocation==null){
+      previewcontent != Image.network(locationImage, fit: BoxFit.cover, width: double.infinity, height: double.infinity,);
+    }
+    if(_pickedLocation ==null){
+      previewcontent =  const CircularProgressIndicator();
+    }
     return Column(
       children: [
         Container(
@@ -91,9 +103,7 @@ print(locationData.longitude);
         width: 1.0,
       )
     ),
-        child: const Text("NO LOCATION YET !" , textAlign: TextAlign.center, style: TextStyle(
-        fontSize: 19, color: Color.fromARGB(255, 202, 202, 224)
-        ),),
+        child: previewcontent
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
