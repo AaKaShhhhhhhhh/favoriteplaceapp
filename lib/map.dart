@@ -51,8 +51,8 @@ class _MapScreenState extends ConsumerState<MapScreen> {
           ]),
       body: FlutterMap(
         options: MapOptions(
-          center: LatLng(widget.location.latitude, widget.location.longitude),
-          zoom: 15.0,
+          initialCenter: LatLng(widget.location.latitude, widget.location.longitude),
+          maxZoom: 15.0,
           onTap: widget.isSelecting ? _selectLocation : null,
         ),
         children: [

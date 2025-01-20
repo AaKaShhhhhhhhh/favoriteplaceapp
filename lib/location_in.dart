@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ffi';
 
 import 'package:favoriteplaceapp/favoritplacedetails.dart';
 import 'package:flutter/material.dart';
@@ -22,11 +23,11 @@ class _locationInState extends State<locationIn>{
   String get locationImage{
   final lat = _pickedLocation!.latitude;
   final long = _pickedLocation!.longitude;
-    return "https://maps.googleapis.com/maps/api/staticmap?center$lat,$long=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C$lat,$long=AlzaSyJtC1PctK1FPEbgkl3VTFuDfsPa-XdL_Ba";
+    return "https://maps.gomaps.pro/maps/api/staticmap?center$lat,$long=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C$lat,$long=AlzaSyJtC1PctK1FPEbgkl3VTFuDfsPa-XdL_Ba";
   }
 
   void getlocation()async{
-
+ 
     Location location = Location();
 
 bool serviceEnabled;
@@ -83,10 +84,10 @@ print(locationData.longitude);
 
 
     );
-    if(_pickedLocation==null){
-      previewcontent != Image.network(locationImage, fit: BoxFit.cover, width: double.infinity, height: double.infinity,);
+    if(_pickedLocation!=null){
+      previewcontent = Image.network(locationImage, fit: BoxFit.cover, width: double.infinity, height: double.infinity,);
     }
-    if(_pickedLocation ==null){
+    if(isgettingloc){
       previewcontent =  const CircularProgressIndicator();
     }
     return Column(
@@ -94,7 +95,7 @@ print(locationData.longitude);
         Container(
           
           alignment: Alignment.center,
-          margin: const EdgeInsets.all(10),
+          
           width: double.infinity,
           height: 170,
           decoration: BoxDecoration(
