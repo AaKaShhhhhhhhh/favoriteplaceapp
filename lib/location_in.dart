@@ -97,7 +97,7 @@ print(locationData.longitude);
           alignment: Alignment.center,
           
           width: double.infinity,
-          height: 171,
+          height: 170,
           decoration: BoxDecoration(
       border: Border.all(
         color: Colors.blue,
