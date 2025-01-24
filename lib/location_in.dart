@@ -78,7 +78,7 @@ print(locationData.longitude);
 
   @override
   Widget build(BuildContext context) {
-    Widget previewcontent = Text(
+    Widget previewcontent = const Text(
       "NO LOCATION FOUND",
       style: TextStyle(fontSize: 20, color: Colors.red),
 

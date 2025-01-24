@@ -48,7 +48,7 @@ class Uiscreen extends ConsumerStatefulWidget{
         children: [
           Text(" NO DATA YET ! ", 
           style: TextStyle(
-            fontSize: 21, color: Color.fromARGB(255, 202, 202, 224)
+            fontSize: 20, color: Color.fromARGB(255, 202, 202, 224)
             ),
             ),
 
